@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Metadata;
 
 class Menu
 {
@@ -199,8 +200,16 @@ class Menu
                     Console.WriteLine();
                     try
                     {
+                        Console.WriteLine("Veuillez rentrer un premier nombre :");
+                        int num = int.Parse(Console.ReadLine());
 
-                        int[] table = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                        int[] table = new int[] { num, num, num, num, num, num, num, num, num, num };
+
+
+                        while (num < 10)
+                        {
+                            int num = int.Parse(Console.ReadLine());
+                        }
 
                         foreach (int element in table)
                         {
@@ -216,7 +225,7 @@ class Menu
                     Console.WriteLine();
                     break;
 
-                case "la3": //Question LA 2
+                case "la3": //Question LA 3
                     Console.WriteLine();
                     try
                     {
@@ -225,7 +234,7 @@ class Menu
                     }
                     catch
                     {
-                        Console.WriteLine("Vous n'avez pas saisi un nombre entier");
+                        
                     }
 
                     Console.WriteLine();
