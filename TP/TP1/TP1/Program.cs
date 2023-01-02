@@ -196,6 +196,8 @@ class Menu
 
                         int unResult = 0;
 
+                        bool continuInput = true;
+
                         do
                         {
                             Console.WriteLine("Veuillez rentrer un premier nombre :");
@@ -205,7 +207,16 @@ class Menu
                             unResult = un1 * un2;
                             Console.WriteLine("Resultat de {0} x {1} = {2}", un1, un2, unResult);
 
-                        } while (unResult <= 1000);
+                            if (unResult >= 1000)
+                            {
+                                continuInput = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Le résultat est inférieur à 1000, veuillez continuer");
+                            }
+
+                        } while (continuInput);
 
                     }
                     catch
