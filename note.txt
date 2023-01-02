@@ -1,0 +1,12 @@
+type valeur: type de base (bool, int, etc..)
+
+type référence: addresse mémoire > stocké dans un emplacement mémoire
+instancié avec le mot 'new'
+
+identifiant
+@ -> permet d'utiliser des mots clés en identifiant (utilisé par c# et qui ne peuvent être utilisé en temps qu'identifiant)
+
+espace de nom -> permet de stocké des types (class)
+
+instruction -> ligne de code
+
