@@ -205,11 +205,14 @@ class Menu
 
                         int[] table = new int[] { num, num, num, num, num, num, num, num, num, num };
 
-
                         while (num < 10)
                         {
-                            int num = int.Parse(Console.ReadLine());
+                            num = int.Parse(Console.ReadLine());
+
                         }
+                        
+                            Console.WriteLine(table);
+
 
                         foreach (int element in table)
                         {
