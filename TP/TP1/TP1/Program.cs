@@ -1,30 +1,50 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
 
+// -- Partie Enum Constantes --
+// -- Q1 --
+enum JourSemaine
+{
+    Lundi = 0,
+    Mardi = 1,
+    Mercredi = 2,
+    Jeudi = 3,
+    Vendredi = 4,
+    Samedi = 5,
+    Dimanche = 6
+}
+
 class Menu
 {
-
     static void Main(string[] args)
     {
 
         bool stateWhile = true;
         while (stateWhile)
         {
-            Console.WriteLine("==== Parite 1 ====");
+            Console.WriteLine("====/ Parite 1 /====");
             Console.WriteLine("Question 1 (p1)");
             Console.WriteLine("Question 2 (p2)");
             Console.WriteLine("Question 3 (p3)");
             Console.WriteLine("Question 4 (p4)");
             Console.WriteLine("Question 5 (p5)");
             Console.WriteLine();
-            Console.WriteLine("==== Parite Loops Array ====");
+            Console.WriteLine("====/ Partie Loops Array /====");
             Console.WriteLine("Question 1 (la1)");
             Console.WriteLine("Question 2 (la2)");
             Console.WriteLine("Question 3 (la3)");
             Console.WriteLine("Question 4 (la4)");
             Console.WriteLine("Question 5 (la5)");
+            Console.WriteLine();
+            Console.WriteLine("====/ Partie Enum Constantes /====");
+            Console.WriteLine("Question 1 (ec1)");
+            Console.WriteLine("Question 2 (ec2)");
+            Console.WriteLine("Question 3 (ec3)");
+            Console.WriteLine("Question 4 (ec4)");
+            Console.WriteLine("Question 5 (ec5)");
             Console.WriteLine();
             Console.WriteLine("Exit (q)");
             Console.WriteLine();
@@ -265,15 +285,16 @@ class Menu
                     try
                     {
 
-                        int[,] table = new int[,] { { 1, 5 }, { 2, 5 }, { 3, 5 }, { 4, 5 }, { 5, 5} };
-                        
+                        double[] table = new double[] { 1.5, 2.5, 3.5, 4.5, 5.5 };
+                        double somme = 0;
                         int i = 0;
 
                         do {
-                            int sum = 0;
-                            Console.WriteLine(sum);
+                            somme += table[i];
                             i++;
                         }while (i < table.Length);
+                        Console.WriteLine("La somme est " + somme);
+
                     }
                     catch
                     {
@@ -309,6 +330,106 @@ class Menu
                     Console.WriteLine();
                     break;
                 // PARTIE Loops Array END
+
+                // PARTIE Enum Constantes START
+
+                case "ec1": //Question EC 1
+                    Console.WriteLine();
+                    try
+                    {
+                        Console.WriteLine("Entrez un nombre entre 0 et 6 pour afficher le jour de la semaine correspondant:");
+                        Console.WriteLine("lundi (0)");
+                        Console.WriteLine("mardi (1)");
+                        Console.WriteLine("mercredi (2)");
+                        Console.WriteLine("jeudi (3)");
+                        Console.WriteLine("vendredi (4)");
+                        Console.WriteLine("samedi (5)");
+                        Console.WriteLine("dimanche (6)");
+
+                        int jourNumero = int.Parse(Console.ReadLine());
+
+                        JourSemaine jour = (JourSemaine)jourNumero;
+                        Console.WriteLine("Le jour de la semaine correspondant est: " + jour);
+
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Vous n'avez pas saisi un nombre entier");
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+
+                case "ec2": //Question EC 2
+                    Console.WriteLine();
+                    try
+                    {
+                        const int jourAnneeMax = 365;
+                        
+                        Console.WriteLine("entrez votre date de naissance: ");
+                        int dateNaissance = int.Parse(Console.ReadLine());
+                        int jourVecu =  jourAnneeMax * dateNaissance;
+                        Console.WriteLine("Voici le nombre de jour que vous avez vécu: " + jourVecu);
+
+
+                    }
+                    catch
+                    {
+
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+
+                case "ec3": //Question EC 3
+                    Console.WriteLine();
+                    try
+                    {
+                        
+
+                    }
+                    catch
+                    {
+
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+
+                case "ec4": //Question EC 4
+                    Console.WriteLine();
+                    try
+                    {
+
+
+                    }
+                    catch
+                    {
+
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+
+                case "ec5": //Question EC 5
+                    Console.WriteLine();
+                    try
+                    {
+
+                    }
+                    catch
+                    {
+
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+                // PARTIE Enum Constantes END
 
 
                 case "q":
