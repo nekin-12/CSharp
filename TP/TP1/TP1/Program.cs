@@ -419,6 +419,7 @@ class Menu
                     Console.WriteLine();
                     try
                     {
+                        Console.WriteLine("Entrez une température en C°: ");
                         double temperature = double.Parse(Console.ReadLine());
 
                         string temperatureRange;
@@ -455,7 +456,17 @@ class Menu
                     Console.WriteLine();
                     try
                     {
+                     
+                        const int pouceParPied = 12;
 
+                        Console.WriteLine("Entrez votre taille en pieds et pouces:");
+                        Console.WriteLine("Pieds: ");
+                        int pieds = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Pouces: ");
+                        int pouces = int.Parse(Console.ReadLine());
+
+                        int totalPouces = pieds * pouceParPied + pouces;
+                        Console.WriteLine("Votre taille est de " + totalPouces + " pouces.");
                     }
                     catch
                     {
