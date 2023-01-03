@@ -387,8 +387,15 @@ class Menu
                     Console.WriteLine();
                     try
                     {
-                        
+                        const int secMax = 60;
+                        Console.WriteLine("Entrez un temps en minute et seconde : ");
+                        Console.WriteLine("Minute : ");
+                        int min = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Seconde : ");
+                        int sec = int.Parse(Console.ReadLine());
 
+                        int total = min * secMax + sec;
+                        Console.WriteLine("Votre temps en seconde : " + total);
                     }
                     catch
                     {
