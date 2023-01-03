@@ -232,12 +232,52 @@ class Menu
                     Console.WriteLine();
                     try
                     {
+                        string[] table = new string[5];
 
+                        table[0] = "red";
+                        table[1] = "purple";
+                        table[2] = "yellow";
+                        table[3] = "grey";
+                        table[4] = "green";
+
+                        List<string> list = new List<string>(table);
+
+                        int i = 0;
+
+                        while (i < 5)
+                        {
+                            Console.Write("{0} \n", list[i]);
+                            i++;
+                        }
 
                     }
                     catch
                     {
                         
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
+
+                case "la4": //Question LA 4
+                    Console.WriteLine();
+                    try
+                    {
+
+                        int[,] table = new int[,] { { 1, 5 }, { 2, 5 }, { 3, 5 }, { 4, 5 }, { 5, 5} };
+                        
+                        int i = 0;
+
+                        do {
+                            int sum = table;
+                            Console.WriteLine(sum);
+                            i++;
+                        }while (i < table.Length);
+                    }
+                    catch
+                    {
+
                     }
 
                     Console.WriteLine();
