@@ -246,7 +246,7 @@ class Menu
 
                         while (i < 5)
                         {
-                            Console.Write("{0} \n", list[i]);
+                            Console.WriteLine("{0}", list[i]);
                             i++;
                         }
 
@@ -270,7 +270,7 @@ class Menu
                         int i = 0;
 
                         do {
-                            int sum = table;
+                            int sum = 0;
                             Console.WriteLine(sum);
                             i++;
                         }while (i < table.Length);
@@ -284,6 +284,30 @@ class Menu
                     Console.WriteLine();
                     break;
 
+                case "la5": //Question LA 5
+                    Console.WriteLine();
+                    try
+                    {
+                        int[] table = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+
+                        for(int i = 0; i < table[i]; i++)
+                        {
+
+                            if (table[i] % 3 == 0  && table[i] % 5 == 0)
+                            {
+                                Console.WriteLine("{0}", table[i]); 
+                            }
+                           
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    break;
                 // PARTIE Loops Array END
 
 
