@@ -17,6 +17,15 @@ enum JourSemaine
     Dimanche = 6
 }
 
+enum Saison
+{
+    printemps = 0,
+    été = 1,
+    automne = 2,
+    hiver = 3,
+
+}
+
 class Menu
 {
     static void Main(string[] args)
@@ -410,7 +419,27 @@ class Menu
                     Console.WriteLine();
                     try
                     {
+                        double temperature = double.Parse(Console.ReadLine());
 
+                        string temperatureRange;
+                        switch (temperature)
+                        {
+                            case var t when t > 30:
+                                temperatureRange = " chaude " + Saison.été;
+                                
+                                break;
+                            case var t when t > 20:
+                                temperatureRange = " tiède " + Saison.automne;
+                                break;
+                            case var t when t > 10:
+                                temperatureRange = " fraîche " + Saison.printemps;
+                                break;
+                            default:
+                                temperatureRange = " froide " + Saison.hiver;
+                                break;
+                        }
+
+                        Console.WriteLine("La température est de " + temperature + ", elle est" + temperatureRange + ".");
 
                     }
                     catch
