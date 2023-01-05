@@ -3,6 +3,8 @@ type valeur: type de base (bool, int, etc..)
 type référence: addresse mémoire > stocké dans un emplacement mémoire
 instancié avec le mot 'new'
 
+signature fonction ex : void Test();
+
 identifiant
 @ -> permet d'utiliser des mots clés en identifiant (utilisé par c# et qui ne peuvent être utilisé en temps qu'identifiant)
 
@@ -10,3 +12,18 @@ espace de nom -> permet de stocké des types (class)
 
 instruction -> ligne de code
 
+héritage:
+Pour que la classe derivee puisse acceder au fonctionnalité de la class parent sans que le reste puisse y acceder il faut mettre ses class en protectex
+
+class de base avec mot-cle "virtual" -> autorise le membre a etre surcharge au sein de la class derive (s'applique au methode et proprietes)
+membre d'une interface n'ont pas a etre declare car ils sont toujours public
+
+
+interface -> defeni le coportement des class
+
+1on peut implementer plusieurs interface en les separant par une virgule
+convention interface -> IMonInterface
+
+
+sur un type de donnée -> ? permet de direque la proprité devient null
+ 

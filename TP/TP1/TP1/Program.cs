@@ -480,8 +480,8 @@ class Menu
 
 
                 case "q":
-                default:
-                    stateWhile = false;
+                    default:
+                        stateWhile = false;
                     break;
                     
             }
