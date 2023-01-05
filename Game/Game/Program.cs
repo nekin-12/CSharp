@@ -1,12 +1,5 @@
-﻿
-class Game
+﻿class Game
 {
-
-    
-    static int WallCollum = 40;
-    static int WallRow = 10;
-    const int WallSizeX = 10;
-    const int WallSizeY = 1;
 
     static int left = 0;
     static int right = 1;
@@ -23,13 +16,18 @@ class Game
     static int PlayerTwoColumn = 0; // column
     static int PlayerTwoRow = 5; // row
 
+    static int WallColumn = 0;
+    static int WallRow = 0;
+    const int WallSizeX = 10;
+    const int WallSizeY = 1;
+
     static bool[,] isUsed;
 
     static void Main(string[] args)
     {
         SetGameField();
         StartScreen();
-        /*Map();*/
+        //Map();
         //WINDOWS SIZE
         isUsed = new bool[Console.WindowWidth, Console.WindowHeight];
 
@@ -48,6 +46,7 @@ class Game
 
             bool PlayerOneLooses = PlayerLoose(PlayerOneRow, PlayerOneColumn);
             bool PlayerTwoLooses = PlayerLoose(PlayerTwoRow, PlayerTwoColumn);
+            /*bool BothLooses = PlayerLoose(WallRow, WallColumn);*/
 
             //PLayer ONE Loose
             if (PlayerOneLooses)
@@ -138,11 +137,11 @@ class Game
 
             isUsed[PlayerOneColumn, PlayerOneRow] = true;
             isUsed[PlayerTwoColumn, PlayerTwoRow] = true;
+            /*isUsed[WallColumn, WallRow] = true;*/
 
             WriteOnPosition(PlayerOneColumn, PlayerOneRow, '*', ConsoleColor.Blue);
             WriteOnPosition(PlayerTwoColumn, PlayerTwoRow, '*', ConsoleColor.Red);
 
-            
             Thread.Sleep(100);
 
         }
@@ -152,6 +151,15 @@ class Game
     static void Map()
     {
 
+        Console.WriteLine(@"
+
+
+
+
+
+
+
+                            ");
         //Size
         for (int x = 0; x <= WallSizeX; x++)
             {
@@ -159,14 +167,14 @@ class Game
             for (int y = 0; y <= WallSizeY; y++)
             {
                 string txtWall = "▒▒";
+                Console.CursorLeft = Console.BufferWidth / 2 - txtWall.Length / 10;
+                
                 Console.Write(txtWall, ConsoleColor.White);
-                //Position
-                Console.SetCursorPosition(WallCollum, WallRow);
-                Console.CursorLeft = Console.BufferWidth / 4 - txtWall.Length / 2;
+
             }
             
             Console.Write('\n');
-           
+            
         }
 
     }
@@ -307,6 +315,7 @@ class Game
         isUsed = new bool[Console.WindowWidth, Console.WindowHeight];
         SetGameField();
         PlayerOneDirection = right;
+        PlayerTwoDirection = left;
 
         string backToMain = "1. Recommencer la partie";
         Console.CursorLeft = Console.BufferWidth / 2 - backToMain.Length / 2;
@@ -328,6 +337,7 @@ class Game
         }
         Console.Clear();
         MovePlayers();
+        //Map();
     }
 
 
@@ -371,12 +381,14 @@ class Game
         Console.WindowWidth = 100;
         Console.BufferWidth = 100;
 
-
         PlayerOneColumn = 0;
         PlayerOneRow = Console.WindowHeight / 2;
 
         PlayerTwoColumn = Console.WindowWidth - 1;
         PlayerTwoRow = Console.WindowHeight / 2;
+
+/*        WallColumn = Console.WindowWidth - 1;
+        WallRow = Console.WindowHeight / 1;*/
 
     }
 
@@ -428,6 +440,12 @@ class Game
         Console.SetCursorPosition(x, y);
         Console.Write(ch);
     }
+
+/*    static void WriteOnPositionWall(int x, int y, char Wall)
+    {
+        Console.SetCursorPosition(x, y);
+        Console.Write(Wall);
+    }*/
 
     //SET KEY CONTROL PLAYER
     static void ChangePlayerDirection(ConsoleKeyInfo key)
