@@ -29,7 +29,7 @@ class Game
     {
         SetGameField();
         StartScreen();
-        Map();
+        /*Map();*/
         //WINDOWS SIZE
         isUsed = new bool[Console.WindowWidth, Console.WindowHeight];
 
@@ -142,13 +142,13 @@ class Game
             WriteOnPosition(PlayerOneColumn, PlayerOneRow, '*', ConsoleColor.Blue);
             WriteOnPosition(PlayerTwoColumn, PlayerTwoRow, '*', ConsoleColor.Red);
 
-
+            
             Thread.Sleep(100);
 
         }
     }
 
-    //MAP 
+    //MAP (Obstacle)
     static void Map()
     {
 
@@ -160,6 +160,7 @@ class Game
             {
                 string txtWall = "▒▒";
                 Console.Write(txtWall, ConsoleColor.White);
+                //Position
                 Console.SetCursorPosition(WallCollum, WallRow);
                 Console.CursorLeft = Console.BufferWidth / 4 - txtWall.Length / 2;
             }
@@ -191,6 +192,7 @@ class Game
                             ▒▒▒▒▒▒▒▒██░▒▒▒▒▒████░░▒▒▒██░▒██░▒▒██░████░▒▒▒▒▒▒▒
                             ▒▒▒▒▒▒▒▒██░▒▒▒▒▒██░░██░▒▒▒████░▒▒▒██░▒▒██░▒▒▒▒▒▒▒
                             ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+            
             Thread.Sleep(500);
         }
 
